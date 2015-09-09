@@ -1,7 +1,7 @@
 
 public class TestInteger implements Comparable<TestInteger> {
 
-	public static int javaCompares = 0;
+	public static long javaCompares = 0;
 	private int value;
 	
 	public TestInteger(int myint) {

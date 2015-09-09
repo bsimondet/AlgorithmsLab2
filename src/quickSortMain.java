@@ -7,29 +7,30 @@ public class quickSortMain {
 
 	public static void main(String[] args) {
 		System.out.println("***Testing Integer Arrays of 100,000 Integers***");
-		Integer[] randomInts1 = randomIntArray(1000);
+		Integer[] randomInts1 = randomIntArray(10);
 		TestInteger[] randomTestInts = randomTestIntArray(1000);
 		long c = 0;
 		long d = 0;
 		long g = 0;
 		long h = 0;
-		long loops = 10;
+		long loops = 5;
 		Integer[] intArray = new Integer[100000];
 		TestInteger[] testIntArray = new TestInteger[100000];
+		TestInteger[] kindaRandomTestInts = kindofRandomTestInts();
+		Integer[] kindaRandomInts = kindofRandomInts();
 		
 		for (int i = 0; i < loops; i++){
 			
-			long a = javaSort(randomTestInts);
-		//	long b = testTime(randomInts1);
-			System.arraycopy(randomTestInts, 0, testIntArray,i * 1000,1000);
+			long a = javaSort(kindaRandomTestInts);
+			long b = testTime(randomInts1);
 		//	long e = javaSort(randomTestInts);
-		//	long f = testTime(randomInts1);
+			//long f = testTime(randomInts1);
 			
-			//System.out.println("Java's merge sort took " + a + " comparisons.");
-			//System.out.println("Our quick sort took " + b + " comparisons.");
+			System.out.println("Java's merge sort on 10 sequences of 1000 took " + a + " comparisons.");
+			System.out.println("Our quick sort on 10 sequences of 1000 took " + b + " comparisons.");
 			
-			//c = a + c;
-			//d = b + d;
+			c = a + c;
+			d = b + d;
 			
 			//System.out.println("Java's merge sort on a sorted array took " + e + " comparisons.");
 			//System.out.println("Our quick sort on a sorted array took " + f + " comparisons.");
@@ -39,13 +40,14 @@ public class quickSortMain {
 			
 		}
 		 
-		System.out.println("java took " + javaSort(testIntArray));
-		//System.out.println("Java completed " + c/loops + " comparisons on average." );
-		//System.out.println("Our quick sort completed " + d/loops + " comparisons on average." );
+		System.out.println("Java completed " + c/loops + " comparisons on average." );
+		System.out.println("Our quick sort completed " + d/loops + " comparisons on average." );
 		
 		//System.out.println("Java completed " + g/loops + " comparisons on average on sorted arrays." );
 		//System.out.println("Our quick sort completed " + h/loops + " comparisons on average on sorted arrays." );
 		
+		
+		System.out.println(isSorted(randomInts1));
 
 	}
 
@@ -80,5 +82,44 @@ public class quickSortMain {
 		}
 		return randomTestInts;
 	}
-
+	
+	public static TestInteger[] kindofRandomTestInts(){
+		TestInteger[] randomTestInts = new TestInteger[10000];
+		int k = 0;
+		
+		for (int l = 0; l < 10; l++){
+			
+			for (int j = 0; j < 1000; j++){
+				randomTestInts[j+k] = TestInteger.TestInteger(j+k);
+			}
+			k+=1000;
+		}
+		return randomTestInts;
+	}
+	
+	public static Integer[] kindofRandomInts(){
+		Integer[] randomTestInts = new Integer[10000];
+		int k = 0;
+		
+		for (int l = 0; l < 100; l++){
+			
+			for (int j = 0; j < 100; j++){
+				randomTestInts[j+k] = j+k;
+			}
+			k+=100;
+		}
+		return randomTestInts;
+	}
+	
+	public static boolean isSorted(Integer[] arr){
+		int i = 0;
+		boolean isSorted = true;
+		while (arr[i+1]<arr.length){
+			if (arr[i] > arr[i+1]){
+				isSorted = false;
+			}
+		}
+		return isSorted;
+	}
+	
 }
