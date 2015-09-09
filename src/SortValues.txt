@@ -1,0 +1,25 @@
+***Testing Integer Arrays of 100,000 Integers***
+Java's merge sort took 120438 comparisons.
+Our quick sort took 151625 comparisons.
+Java's merge sort on a sorted array took 9999 comparisons.
+Our quick sort on a sorted array took 49722994 comparisons.
+Java's merge sort took 9999 comparisons.
+Our quick sort took 49722994 comparisons.
+Java's merge sort on a sorted array took 9999 comparisons.
+Our quick sort on a sorted array took 49722994 comparisons.
+Java's merge sort took 9999 comparisons.
+Our quick sort took 49722994 comparisons.
+Java's merge sort on a sorted array took 9999 comparisons.
+Our quick sort on a sorted array took 49722994 comparisons.
+Java's merge sort took 9999 comparisons.
+Our quick sort took 49722994 comparisons.
+Java's merge sort on a sorted array took 9999 comparisons.
+Our quick sort on a sorted array took 49722994 comparisons.
+Java's merge sort took 9999 comparisons.
+Our quick sort took 49722994 comparisons.
+Java's merge sort on a sorted array took 9999 comparisons.
+Our quick sort on a sorted array took 49722994 comparisons.
+Java completed 32086 comparisons on average.
+Our quick sort completed 39808720 comparisons on average.
+Java completed 9999 comparisons on average on sorted arrays.
+Our quick sort completed 49722994 comparisons on average on sorted arrays.
