@@ -17,6 +17,37 @@ public class quickSortMain {
 			System.out.println(somearray[i].toString());
 		}
 */
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 	public static void sortN(int n,int times) {
