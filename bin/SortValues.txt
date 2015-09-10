@@ -1,52 +1,52 @@
-***Testing Integer Arrays of 100,000 Integers***
-Java's merge sort took 120438 comparisons.
-Our quick sort took 151625 comparisons.
-Java's merge sort on a sorted array took 9999 comparisons.
-Our quick sort on a sorted array took 49722994 comparisons.
-Java's merge sort took 9999 comparisons.
-Our quick sort took 49722994 comparisons.
-Java's merge sort on a sorted array took 9999 comparisons.
-Our quick sort on a sorted array took 49722994 comparisons.
-Java's merge sort took 9999 comparisons.
-Our quick sort took 49722994 comparisons.
-Java's merge sort on a sorted array took 9999 comparisons.
-Our quick sort on a sorted array took 49722994 comparisons.
-Java's merge sort took 9999 comparisons.
-Our quick sort took 49722994 comparisons.
-Java's merge sort on a sorted array took 9999 comparisons.
-Our quick sort on a sorted array took 49722994 comparisons.
-Java's merge sort took 9999 comparisons.
-Our quick sort took 49722994 comparisons.
-Java's merge sort on a sorted array took 9999 comparisons.
-Our quick sort on a sorted array took 49722994 comparisons.
-Java completed 32086 comparisons on average.
-Our quick sort completed 39808720 comparisons on average.
-Java completed 9999 comparisons on average on sorted arrays.
-Our quick sort completed 49722994 comparisons on average on sorted arrays.
-
-
-Java's merge sort on 10 sequences of 1000 took 9999 comparisons.
-Our quick sort on 10 sequences of 1000 took 49995000 comparisons.
-Java's merge sort on 10 sequences of 1000 took 9999 comparisons.
-Our quick sort on 10 sequences of 1000 took 49995000 comparisons.
-Java's merge sort on 10 sequences of 1000 took 9999 comparisons.
-Our quick sort on 10 sequences of 1000 took 49995000 comparisons.
-Java's merge sort on 10 sequences of 1000 took 9999 comparisons.
-Our quick sort on 10 sequences of 1000 took 49995000 comparisons.
-Java's merge sort on 10 sequences of 1000 took 9999 comparisons.
-Our quick sort on 10 sequences of 1000 took 49995000 comparisons.
-Java completed 9999 comparisons on average.
-Our quick sort completed 49995000 comparisons on average.
-
-Java's merge sort on 100 sequences of 100 took 9999 comparisons.
-Our quick sort on 100 sequences of 100 took 49995000 comparisons.
-Java's merge sort on 100 sequences of 100 took 9999 comparisons.
-Our quick sort on 100 sequences of 100 took 49995000 comparisons.
-Java's merge sort on 100 sequences of 100 took 9999 comparisons.
-Our quick sort on 100 sequences of 100 took 49995000 comparisons.
-Java's merge sort on 100 sequences of 100 took 9999 comparisons.
-Our quick sort on 100 sequences of 100 took 49995000 comparisons.
-Java's merge sort on 100 sequences of 100 took 9999 comparisons.
-Our quick sort on 100 sequences of 100 took 49995000 comparisons.
-Java completed 9999 comparisons on average.
-Our quick sort completed 49995000 comparisons on average.
+*** Testing sorting arrays with 10000 values, 5 times.***
+Java used 120312 compares.
+Our quick sort used 148947 compares.
+Java used 120421 compares.
+Our quick sort used 163195 compares.
+Java used 120380 compares.
+Our quick sort used 156962 compares.
+Java used 120410 compares.
+Our quick sort used 152851 compares.
+Java used 120441 compares.
+Our quick sort used 147665 compares.
+On average, java took 120392 compares.
+On average, our quick sort took 153924 compares.
+*** Testing sorting arrays with 10000 values, 1 blocks, 5 times.***
+Java used 9999 compares.
+Our quick sort used 49741058 compares.
+Java used 9999 compares.
+Our quick sort used 49749697 compares.
+Java used 9999 compares.
+Our quick sort used 49808398 compares.
+Java used 9999 compares.
+Our quick sort used 49765399 compares.
+Java used 9999 compares.
+Our quick sort used 49797454 compares.
+On average, java took 9999 compares.
+On average, our quick sort took 49772401 compares.
+*** Testing sorting arrays with 10000 values, 10 blocks, 5 times.***
+Java used 45975 compares.
+Our quick sort used 411265 compares.
+Java used 45972 compares.
+Our quick sort used 512888 compares.
+Java used 45952 compares.
+Our quick sort used 1176390 compares.
+Java used 45985 compares.
+Our quick sort used 519832 compares.
+Java used 45948 compares.
+Our quick sort used 626928 compares.
+On average, java took 45966 compares.
+On average, our quick sort took 649460 compares.
+*** Testing sorting arrays with 10000 values, 100 blocks, 5 times.***
+Java used 78063 compares.
+Our quick sort used 460813 compares.
+Java used 78086 compares.
+Our quick sort used 207496 compares.
+Java used 78482 compares.
+Our quick sort used 257551 compares.
+Java used 78449 compares.
+Our quick sort used 371365 compares.
+Java used 78457 compares.
+Our quick sort used 192780 compares.
+On average, java took 78307 compares.
+On average, our quick sort took 298001 compares.

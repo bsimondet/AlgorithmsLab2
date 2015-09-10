@@ -6,49 +6,57 @@ import javax.lang.model.element.VariableElement;
 public class quickSortMain {
 
 	public static void main(String[] args) {
-		System.out.println("***Testing Integer Arrays of 100,000 Integers***");
-		Integer[] randomInts1 = randomIntArray(10);
-		TestInteger[] randomTestInts = randomTestIntArray(1000);
-		long c = 0;
-		long d = 0;
-		long g = 0;
-		long h = 0;
-		long loops = 5;
-		Integer[] intArray = new Integer[100000];
-		TestInteger[] testIntArray = new TestInteger[100000];
-		TestInteger[] kindaRandomTestInts = kindofRandomTestInts();
-		Integer[] kindaRandomInts = kindofRandomInts();
-		
-		for (int i = 0; i < loops; i++){
-			
-			long a = javaSort(kindaRandomTestInts);
-			long b = testTime(randomInts1);
-		//	long e = javaSort(randomTestInts);
-			//long f = testTime(randomInts1);
-			
-			System.out.println("Java's merge sort on 10 sequences of 1000 took " + a + " comparisons.");
-			System.out.println("Our quick sort on 10 sequences of 1000 took " + b + " comparisons.");
-			
-			c = a + c;
-			d = b + d;
-			
-			//System.out.println("Java's merge sort on a sorted array took " + e + " comparisons.");
-			//System.out.println("Our quick sort on a sorted array took " + f + " comparisons.");
-			
-			//g = e + g;
-			//h = f + h;
-			
-		}
+		sortN(10000, 5);
+		sortN(10000,5,1);
+		sortN(1000,5,10);
+		sortN(100,5,100);
 		 
-		System.out.println("Java completed " + c/loops + " comparisons on average." );
-		System.out.println("Our quick sort completed " + d/loops + " comparisons on average." );
-		
-		//System.out.println("Java completed " + g/loops + " comparisons on average on sorted arrays." );
-		//System.out.println("Our quick sort completed " + h/loops + " comparisons on average on sorted arrays." );
-		
-		
-		System.out.println(isSorted(randomInts1));
-
+		/*
+		TestInteger[] somearray = semisortedTestInts(4,1);
+		for (int i = 0;i<16;i++){
+			System.out.println(somearray[i].toString());
+		}
+*/
+	}
+	
+	public static void sortN(int n,int times) {
+		System.out.println("*** Testing sorting arrays with " + n + " values, " + times + " times.***");
+		long javaAverageCompares = 0;
+		long quickSortAverageCompares = 0;
+		for (int i = 0; i < times; i++){
+			TestInteger[] testArray = randomTestIntArray(n);
+			TestInteger[] testArray2 = testArray.clone();
+			long javaTime = javaSort(testArray);
+			long quickTime = testTime(testArray2);
+			System.out.println("Java used " + javaTime + " compares.");
+			System.out.println("Our quick sort used " + quickTime + " compares.");
+			javaAverageCompares = javaTime + javaAverageCompares;
+			quickSortAverageCompares = quickTime + quickSortAverageCompares;
+		}
+		javaAverageCompares = javaAverageCompares/times;
+		quickSortAverageCompares = quickSortAverageCompares/times;
+		System.out.println("On average, java took " + javaAverageCompares + " compares.");
+		System.out.println("On average, our quick sort took " + quickSortAverageCompares + " compares.");
+	}
+	
+	public static void sortN(int length,int times,int blocks) {
+		System.out.println("*** Testing sorting arrays with " + length*blocks + " values, " + blocks + " blocks, " + times + " times.***");
+		long javaAverageCompares = 0;
+		long quickSortAverageCompares = 0;
+		for (int i = 0; i < times; i++){
+			TestInteger[] testArray = semisortedTestInts(blocks,length);
+			TestInteger[] testArray2 = testArray.clone();
+			long javaTime = javaSort(testArray);
+			long quickTime = testTime(testArray2);
+			System.out.println("Java used " + javaTime + " compares.");
+			System.out.println("Our quick sort used " + quickTime + " compares.");
+			javaAverageCompares = javaTime + javaAverageCompares;
+			quickSortAverageCompares = quickTime + quickSortAverageCompares;
+		}
+		javaAverageCompares = javaAverageCompares/times;
+		quickSortAverageCompares = quickSortAverageCompares/times;
+		System.out.println("On average, java took " + javaAverageCompares + " compares.");
+		System.out.println("On average, our quick sort took " + quickSortAverageCompares + " compares.");
 	}
 
 	private static <T extends Comparable<T>> long testTime(T[] arr ) {
@@ -63,52 +71,24 @@ public class quickSortMain {
 		return TestInteger.javaCompares;
 	}
 	
-	public static Integer[] randomIntArray(int arrayLength) {
-		Random rand = new Random();
-		Integer[] randomInts = new Integer[arrayLength];
-		
-		for (int i = 0; i < arrayLength; i++) {
-			randomInts[i] = rand.nextInt(1000000);
-		}
-		return randomInts;
-	}
-	
 	public static TestInteger[] randomTestIntArray(int arrayLength) {
 		Random rand = new Random();
 		TestInteger[] randomTestInts = new TestInteger[arrayLength];
 		
 		for (int i = 0; i < arrayLength; i++) {
-			randomTestInts[i] = TestInteger.TestInteger(rand.nextInt(1000000));
+			randomTestInts[i] = new TestInteger(rand.nextInt(1000000));
 		}
 		return randomTestInts;
 	}
 	
-	public static TestInteger[] kindofRandomTestInts(){
-		TestInteger[] randomTestInts = new TestInteger[10000];
-		int k = 0;
-		
-		for (int l = 0; l < 10; l++){
-			
-			for (int j = 0; j < 1000; j++){
-				randomTestInts[j+k] = TestInteger.TestInteger(j+k);
-			}
-			k+=1000;
+	public static TestInteger[] semisortedTestInts(int blocks, int length){
+		TestInteger[] testintarray = new TestInteger[blocks*length];
+		for (int i = 0;i<blocks;i++){
+			TestInteger[] temparray = randomTestIntArray(length);
+			javaSort(temparray);
+			System.arraycopy(temparray,0,testintarray,length*i,length);
 		}
-		return randomTestInts;
-	}
-	
-	public static Integer[] kindofRandomInts(){
-		Integer[] randomTestInts = new Integer[10000];
-		int k = 0;
-		
-		for (int l = 0; l < 100; l++){
-			
-			for (int j = 0; j < 100; j++){
-				randomTestInts[j+k] = j+k;
-			}
-			k+=100;
-		}
-		return randomTestInts;
+		return testintarray;
 	}
 	
 	public static boolean isSorted(Integer[] arr){
@@ -121,5 +101,4 @@ public class quickSortMain {
 		}
 		return isSorted;
 	}
-	
 }
