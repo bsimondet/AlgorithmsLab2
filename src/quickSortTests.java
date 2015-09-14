@@ -95,6 +95,59 @@ public class quickSortTests {
 		randomizedQuickSort.quickSort(someInts);
 		System.out.println("rtestAllSameValue");
 		System.out.println(Arrays.toString(someInts));
+		assertArrayEquals(sortedInts, someInts);}
+	
+	
+	//###################threePivotQuickSort###############
+	
+	
+	@Test
+	public void rttestEmpty() {
+		String[] someStrings = {};
+		String[] sorted = {};
+		threePivotQuickSort.quickSort(someStrings);
+		System.out.println("rtestEmpty");
+		System.out.println(Arrays.toString(someStrings));
+		assertArrayEquals(sorted, someStrings);
+	}
+
+	@Test
+	public void rttestInts() {
+		Integer[] someInts = { 3, 5, 1, 0, -4, -10 };
+		Integer[] sortedInts = { -10, -4, 0, 1, 3, 5 };
+		threePivotQuickSort.quickSort(someInts);
+		System.out.println("rtestInts");
+		System.out.println(Arrays.toString(someInts));
+		assertArrayEquals(sortedInts, someInts);
+	}
+
+	@Test
+	public void rttestOneElement() {
+		Integer[] someInts = { 3 };
+		Integer[] sortedInts = { 3 };
+		threePivotQuickSort.quickSort(someInts);
+		System.out.println("rtestOneElement");
+		System.out.println(Arrays.toString(someInts));
+		assertArrayEquals(sortedInts, someInts);
+	}
+
+	@Test
+	public void rttestReverse() {
+		Integer[] someInts = { 5, 3, 1, 0, -4, -10 };
+		Integer[] sortedInts = { -10, -4, 0, 1, 3, 5 };
+		threePivotQuickSort.quickSort(someInts);
+		System.out.println("rtestReverse");
+		System.out.println(Arrays.toString(someInts));
+		assertArrayEquals(sortedInts, someInts);
+	}
+
+	@Test
+	public void rttestAllSameValue() {
+		Integer[] someInts = { 5, 5, 5, 5, 5 };
+		Integer[] sortedInts = { 5, 5, 5, 5, 5 };
+		threePivotQuickSort.quickSort(someInts);
+		System.out.println("rtestAllSameValue");
+		System.out.println(Arrays.toString(someInts));
 		assertArrayEquals(sortedInts, someInts);
 	}
 }

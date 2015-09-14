@@ -2,15 +2,18 @@ import java.util.Random;
 
 public class randomizedQuickSort {
 
-	private static int randomInRange(int lower,int upper){
+	public static int randomInRange(int lower,int upper){
+		//if (lower == upper) return lower;
 		Random rand = new Random();
-		return lower + rand.nextInt(upper - lower);
+		return lower + rand.nextInt(upper - lower + 1);
 	}
 	
 	static long comparisonCount = 0;
 
 	public static <T extends Comparable<T>> void quickSort(T[] arr) {
 		if (arr.length > 1) {
+			int r = randomInRange(0,arr.length - 1);
+			swap(arr, r, arr.length-1);
 			quickSortRecursive(arr, 0, arr.length - 1);
 		}
 	}
@@ -19,12 +22,13 @@ public class randomizedQuickSort {
 			int left, int right) {
 		if (right - left > 0) {
 			// Step 1: set up swap pointer index
+
 			int swapIndex = left;
 			T pivotValue = arr[left];
-			int r = randomInRange(left,right);
+
 
 			// Step 2: swap pivot with the last value in the subarray */
-			swap(arr, left, r);
+			swap(arr, left, right);
 
 			// Step 3: partition (hint: you'll need a loop)
 			int currentIndex = left;
