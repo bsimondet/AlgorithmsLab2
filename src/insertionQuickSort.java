@@ -1,5 +1,4 @@
-
-public class quickSort {
+public class insertionQuickSort {
 	
 	static long comparisonCount = 0;
 
@@ -38,6 +37,18 @@ public class quickSort {
 		T temp = arr[index2];
 		arr[index2] = arr[index1];
 		arr[index1] = temp;
+	}
+	
+	public static <T> void insertionSort(TestInteger[] arr){
+		for (int i = 1; i < arr.length; i++){
+			TestInteger key = arr[i];
+			int j = i - 1;
+			while (j > 0 && arr[j].toInt() > key.toInt()){
+				arr[j+1] = arr[j];
+				j = j-1;
+			}
+			arr[j+1] = key;
+		}
 	}
 
 }

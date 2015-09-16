@@ -1,8 +1,6 @@
 import java.util.Arrays;
 import java.util.Random;
 
-import javax.lang.model.element.VariableElement;
-
 public class quickSortMain {
 
 	public static void main(String[] args) {
@@ -10,15 +8,21 @@ public class quickSortMain {
 		sortN(10000,5,1);
 		sortN(1000,5,10);
 		sortN(100,5,100);
-		 
-		/*
-		TestInteger[] somearray = semisortedTestInts(4,1);
-		for (int i = 0;i<16;i++){
-			System.out.println(somearray[i].toString());
-		}
-*/
 		
+		randomizedSortN(10000, 5);
+		randomizedSortN(10000,5,1);
+		randomizedSortN(1000,5,10);
+		randomizedSortN(100,5,100);
 		
+		threePivotSortN(10000, 5);
+		threePivotSortN(10000,5,1);
+		threePivotSortN(1000,5,10);
+		threePivotSortN(100,5,100);
+		
+		switchToInsertionSortN(10000, 5);
+		switchToInsertionSortN(10000,5,1);
+		switchToInsertionSortN(1000,5,10);
+		switchToInsertionSortN(100,5,100);
 		
 	}
 	
@@ -61,6 +65,84 @@ public class quickSortMain {
 		System.out.println("On average, java took " + javaAverageCompares + " compares.");
 		System.out.println("On average, our quick sort took " + quickSortAverageCompares + " compares.");
 	}
+	
+	public static void randomizedSortN(int n,int times) {
+		System.out.println("*** Testing sorting arrays with " + n + " values, " + times + " times.***");
+		long quickSortAverageCompares = 0;
+		for (int i = 0; i < times; i++){
+			TestInteger[] testArray = randomTestIntArray(n);
+			long quickTime = randomizedQuickSort(testArray);
+			System.out.println("Our randomized quick sort used " + quickTime + " compares.");
+			quickSortAverageCompares = quickTime + quickSortAverageCompares;
+		}
+		quickSortAverageCompares = quickSortAverageCompares/times;
+		System.out.println("On average, our randomized quick sort took " + quickSortAverageCompares + " compares.");
+	}
+	
+	public static void randomizedSortN(int length,int times,int blocks) {
+		System.out.println("*** Testing sorting arrays with " + length*blocks + " values, " + blocks + " blocks, " + times + " times.***");
+		long quickSortAverageCompares = 0;
+		for (int i = 0; i < times; i++){
+			TestInteger[] testArray = semisortedTestInts(blocks,length);
+			long quickTime = randomizedQuickSort(testArray);
+			System.out.println("Our randomized quick sort used " + quickTime + " compares.");
+			quickSortAverageCompares = quickTime + quickSortAverageCompares;
+		}
+		quickSortAverageCompares = quickSortAverageCompares/times;
+		System.out.println("On average, our randomized quick sort took " + quickSortAverageCompares + " compares.");
+	}
+	
+	public static void threePivotSortN(int n,int times) {
+		System.out.println("*** Testing sorting arrays with " + n + " values, " + times + " times.***");
+		long quickSortAverageCompares = 0;
+		for (int i = 0; i < times; i++){
+			TestInteger[] testArray = randomTestIntArray(n);
+			long quickTime = threePivotQuickSort(testArray);
+			System.out.println("Our three pivot quick sort used " + quickTime + " compares.");
+			quickSortAverageCompares = quickTime + quickSortAverageCompares;
+		}
+		quickSortAverageCompares = quickSortAverageCompares/times;
+		System.out.println("On average, our three pivot quick sort took " + quickSortAverageCompares + " compares.");
+	}
+	
+	public static void threePivotSortN(int length,int times,int blocks) {
+		System.out.println("*** Testing sorting arrays with " + length*blocks + " values, " + blocks + " blocks, " + times + " times.***");
+		long quickSortAverageCompares = 0;
+		for (int i = 0; i < times; i++){
+			TestInteger[] testArray = semisortedTestInts(blocks,length);
+			long quickTime = threePivotQuickSort(testArray);
+			System.out.println("Our three pivot quick sort used " + quickTime + " compares.");
+			quickSortAverageCompares = quickTime + quickSortAverageCompares;
+		}
+		quickSortAverageCompares = quickSortAverageCompares/times;
+		System.out.println("On average, our three pivot quick sort took " + quickSortAverageCompares + " compares.");
+	}
+	
+	public static void switchToInsertionSortN(int n,int times) {
+		System.out.println("*** Testing sorting arrays with " + n + " values, " + times + " times.***");
+		long quickSortAverageCompares = 0;
+		for (int i = 0; i < times; i++){
+			TestInteger[] testArray = randomTestIntArray(n);
+			long quickTime = switchToInsertionQuickSort(testArray);
+			System.out.println("Our switch to insertion quick sort used " + quickTime + " compares.");
+			quickSortAverageCompares = quickTime + quickSortAverageCompares;
+		}
+		quickSortAverageCompares = quickSortAverageCompares/times;
+		System.out.println("On average, our switch to insertion quick sort took " + quickSortAverageCompares + " compares.");
+	}
+	
+	public static void switchToInsertionSortN(int length,int times,int blocks) {
+		System.out.println("*** Testing sorting arrays with " + length*blocks + " values, " + blocks + " blocks, " + times + " times.***");
+		long quickSortAverageCompares = 0;
+		for (int i = 0; i < times; i++){
+			TestInteger[] testArray = semisortedTestInts(blocks,length);
+			long quickTime = switchToInsertionQuickSort(testArray);
+			System.out.println("Our switch to insertion quick sort used " + quickTime + " compares.");
+			quickSortAverageCompares = quickTime + quickSortAverageCompares;
+		}
+		quickSortAverageCompares = quickSortAverageCompares/times;
+		System.out.println("On average, our switch to insertion quick sort took " + quickSortAverageCompares + " compares.");
+	}
 
 	private static <T extends Comparable<T>> long testTime(T[] arr ) {
 		quickSort.comparisonCount = 0;
@@ -72,6 +154,24 @@ public class quickSortMain {
 		TestInteger.javaCompares = 0;
 		Arrays.sort(arr);
 		return TestInteger.javaCompares;
+	}
+	
+	private static <T extends Comparable<T>> long randomizedQuickSort(T[] arr ) {
+		randomizedQuickSort.comparisonCount = 0;
+		randomizedQuickSort.quickSort(arr);
+		return randomizedQuickSort.comparisonCount;
+	}
+	
+	private static <T extends Comparable<T>> long threePivotQuickSort(T[] arr ) {
+		threePivotQuickSort.comparisonCount = 0;
+		threePivotQuickSort.quickSort(arr);
+		return threePivotQuickSort.comparisonCount;
+	}
+	
+	private static <T extends Comparable<T>> long switchToInsertionQuickSort(T[] arr ) {
+		insertionQuickSort.comparisonCount = 0;
+		insertionQuickSort.quickSort(arr);
+		return insertionQuickSort.comparisonCount;
 	}
 	
 	public static TestInteger[] randomTestIntArray(int arrayLength) {

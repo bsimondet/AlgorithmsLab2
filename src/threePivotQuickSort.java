@@ -30,15 +30,12 @@ public class threePivotQuickSort {
 	private static <T extends Comparable<T>> void quickSortRecursive(T[] arr,
 			int left, int right) {
 		if (right - left > 0) {
-			// Step 1: set up swap pointer index
 
 			int swapIndex = left;
 			T pivotValue = arr[left];
 
-			// Step 2: swap pivot with the last value in the subarray */
 			swap(arr, left, right);
 
-			// Step 3: partition (hint: you'll need a loop)
 			int currentIndex = left;
 			while (currentIndex < right) {
 				comparisonCount++;
@@ -53,7 +50,6 @@ public class threePivotQuickSort {
 
 			swap(arr, swapIndex, right);
 
-			// Step 4: Make the recursive calls
 			quickSortRecursive(arr, left, swapIndex - 1);
 			quickSortRecursive(arr, swapIndex + 1, right);
 		}
