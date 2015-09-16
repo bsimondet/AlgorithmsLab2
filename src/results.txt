@@ -1,0 +1,136 @@
+*** Testing sorting arrays with 10000 values, 5 times.***
+Java used 120398 compares.
+Our quick sort used 151231 compares.
+Java used 120400 compares.
+Our quick sort used 158065 compares.
+Java used 120344 compares.
+Our quick sort used 159387 compares.
+Java used 120318 compares.
+Our quick sort used 149154 compares.
+Java used 120337 compares.
+Our quick sort used 154886 compares.
+On average, java took 120359 compares.
+On average, our quick sort took 154544 compares.
+*** Testing sorting arrays with 10000 values, 1 blocks, 5 times.***
+Java used 9999 compares.
+Our quick sort used 49760478 compares.
+Java used 9999 compares.
+Our quick sort used 49708239 compares.
+Java used 9999 compares.
+Our quick sort used 49751907 compares.
+Java used 9999 compares.
+Our quick sort used 49759162 compares.
+Java used 9999 compares.
+Our quick sort used 49767086 compares.
+On average, java took 9999 compares.
+On average, our quick sort took 49749374 compares.
+*** Testing sorting arrays with 10000 values, 10 blocks, 5 times.***
+Java used 45966 compares.
+Our quick sort used 329749 compares.
+Java used 45976 compares.
+Our quick sort used 396323 compares.
+Java used 45971 compares.
+Our quick sort used 339411 compares.
+Java used 45973 compares.
+Our quick sort used 849584 compares.
+Java used 45967 compares.
+Our quick sort used 1035959 compares.
+On average, java took 45970 compares.
+On average, our quick sort took 590205 compares.
+*** Testing sorting arrays with 10000 values, 100 blocks, 5 times.***
+Java used 78504 compares.
+Our quick sort used 633095 compares.
+Java used 78488 compares.
+Our quick sort used 196211 compares.
+Java used 78554 compares.
+Our quick sort used 275593 compares.
+Java used 78607 compares.
+Our quick sort used 178505 compares.
+Java used 78331 compares.
+Our quick sort used 516170 compares.
+On average, java took 78496 compares.
+On average, our quick sort took 359914 compares.
+*** Testing sorting arrays with 10000 values, 5 times.***
+Our randomized quick sort used 157368 compares.
+Our randomized quick sort used 169434 compares.
+Our randomized quick sort used 149145 compares.
+Our randomized quick sort used 148216 compares.
+Our randomized quick sort used 152506 compares.
+On average, our randomized quick sort took 155333 compares.
+*** Testing sorting arrays with 10000 values, 1 blocks, 5 times.***
+Our randomized quick sort used 49658573 compares.
+Our randomized quick sort used 49729429 compares.
+Our randomized quick sort used 49722735 compares.
+Our randomized quick sort used 49740741 compares.
+Our randomized quick sort used 49722693 compares.
+On average, our randomized quick sort took 49714834 compares.
+*** Testing sorting arrays with 10000 values, 10 blocks, 5 times.***
+Our randomized quick sort used 1858600 compares.
+Our randomized quick sort used 281066 compares.
+Our randomized quick sort used 1513885 compares.
+Our randomized quick sort used 711971 compares.
+Our randomized quick sort used 2381906 compares.
+On average, our randomized quick sort took 1349485 compares.
+*** Testing sorting arrays with 10000 values, 100 blocks, 5 times.***
+Our randomized quick sort used 195853 compares.
+Our randomized quick sort used 394578 compares.
+Our randomized quick sort used 224095 compares.
+Our randomized quick sort used 279160 compares.
+Our randomized quick sort used 470705 compares.
+On average, our randomized quick sort took 312878 compares.
+*** Testing sorting arrays with 10000 values, 5 times.***
+Our three pivot quick sort used 164745 compares.
+Our three pivot quick sort used 158904 compares.
+Our three pivot quick sort used 155193 compares.
+Our three pivot quick sort used 167709 compares.
+Our three pivot quick sort used 160021 compares.
+On average, our three pivot quick sort took 161314 compares.
+*** Testing sorting arrays with 10000 values, 1 blocks, 5 times.***
+Our three pivot quick sort used 49739620 compares.
+Our three pivot quick sort used 49719693 compares.
+Our three pivot quick sort used 49725018 compares.
+Our three pivot quick sort used 49777316 compares.
+Our three pivot quick sort used 49769384 compares.
+On average, our three pivot quick sort took 49746206 compares.
+*** Testing sorting arrays with 10000 values, 10 blocks, 5 times.***
+Our three pivot quick sort used 517776 compares.
+Our three pivot quick sort used 501331 compares.
+Our three pivot quick sort used 580401 compares.
+Our three pivot quick sort used 751487 compares.
+Our three pivot quick sort used 364231 compares.
+On average, our three pivot quick sort took 543045 compares.
+*** Testing sorting arrays with 10000 values, 100 blocks, 5 times.***
+Our three pivot quick sort used 192230 compares.
+Our three pivot quick sort used 186246 compares.
+Our three pivot quick sort used 500554 compares.
+Our three pivot quick sort used 217745 compares.
+Our three pivot quick sort used 202694 compares.
+On average, our three pivot quick sort took 259893 compares.
+*** Testing sorting arrays with 10000 values, 5 times.***
+Our switch to insertion quick sort used 16515441 compares.
+Our switch to insertion quick sort used 24916563 compares.
+Our switch to insertion quick sort used 25176505 compares.
+Our switch to insertion quick sort used 24987810 compares.
+Our switch to insertion quick sort used 25082311 compares.
+On average, our switch to insertion quick sort took 23335726 compares.
+*** Testing sorting arrays with 10000 values, 1 blocks, 5 times.***
+Our switch to insertion quick sort used 50 compares.
+Our switch to insertion quick sort used 52 compares.
+Our switch to insertion quick sort used 47 compares.
+Our switch to insertion quick sort used 57 compares.
+Our switch to insertion quick sort used 45 compares.
+On average, our switch to insertion quick sort took 50 compares.
+*** Testing sorting arrays with 10000 values, 10 blocks, 5 times.***
+Our switch to insertion quick sort used 22550671 compares.
+Our switch to insertion quick sort used 22628119 compares.
+Our switch to insertion quick sort used 22253428 compares.
+Our switch to insertion quick sort used 22479429 compares.
+Our switch to insertion quick sort used 22464396 compares.
+On average, our switch to insertion quick sort took 22475208 compares.
+*** Testing sorting arrays with 10000 values, 100 blocks, 5 times.***
+Our switch to insertion quick sort used 24854642 compares.
+Our switch to insertion quick sort used 24637541 compares.
+Our switch to insertion quick sort used 24926217 compares.
+Our switch to insertion quick sort used 24803320 compares.
+Our switch to insertion quick sort used 24677090 compares.
+On average, our switch to insertion quick sort took 24779762 compares.
